@@ -1,3 +1,1 @@
-import { MovieBoxProvider } from "./moviebox";
-
-export const provider = MovieBoxProvider;
+export { providerManager } from "./providerManager";
