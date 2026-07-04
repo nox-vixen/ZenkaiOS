@@ -1,37 +1,31 @@
-import type {
-  Anime,
-  AnimeProvider,
-  Episode,
-  Stream,
-} from "./types";
+import { Provider, SearchResult, Episode, Stream } from "./types";
 
-export const MovieBoxProvider: AnimeProvider = {
+export const MovieBoxProvider: Provider = {
+  id: "moviebox",
   name: "MovieBox",
 
-  async getTrendingAnime(): Promise<Anime[]> {
+  async search(query: string): Promise<SearchResult[]> {
+    // TODO:
+    // Later this will call our MovieBox backend API.
     return [];
   },
 
-  async getPopularAnime(): Promise<Anime[]> {
-    return [];
-  },
-
-  async search(query: string): Promise<Anime[]> {
-    return [];
-  },
-
-  async getAnime(id: string): Promise<Anime | null> {
+  async details(id: string): Promise<SearchResult | null> {
+    // TODO
     return null;
   },
 
-  async getEpisodes(id: string): Promise<Episode[]> {
+  async episodes(id: string): Promise<Episode[]> {
+    // TODO
     return [];
   },
 
-  async getStreams(
-    animeId: string,
-    episodeId: string
+  async streams(
+    id: string,
+    season?: number,
+    episode?: number,
   ): Promise<Stream[]> {
+    // TODO
     return [];
   },
 };
