@@ -1,12 +1,3 @@
-import { Anime } from "./types";
-import { getProviders } from "./registry";
+import { providerManager } from "./manager";
 
-export async function searchAnime(query: string): Promise<Anime[]> {
-  const providers = getProviders();
-
-  const results = await Promise.all(
-    providers.map((provider) => provider.search(query))
-  );
-
-  return results.flat();
-}
+export const searchAnime = providerManager.search.bind(providerManager);
